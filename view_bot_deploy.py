@@ -25,11 +25,9 @@ async def on_message(message):
     if message.content.startswith('!view_bot'):
         msg = 'enter views needed'.format(message) #write
         await message.channel.send(msg)
-        time.sleep(1)
         x = await client.wait_for('message')#read
         viewsx = x.content.lower()
         views = int(viewsx)
-        time.sleep(1)
 
         msg2 = 'enter length of video'.format(message) #write
         await message.channel.send(msg2)
@@ -48,11 +46,10 @@ async def on_message(message):
         await message.channel.send(msg5)
 
         driver = webdriver.Chrome()
-        for i in range(5):
+        for i in range(views):
                 driver.get(linku)
                 time.sleep(timer)
-                if message.content.startswith('!progress'):
-                    await message.channel.send(i)
+                await message.channel.send(i)
                 driver.refresh()
         driver.close()
         msg4 = 'Successfully Completed'.format(message) #write
