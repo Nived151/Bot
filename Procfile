@@ -1,0 +1,1 @@
+worker: python view_bot_deploy.py
