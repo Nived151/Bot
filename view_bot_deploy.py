@@ -4,6 +4,14 @@ import time
 import discord
 from selenium import webdriver
 
+Options = webdriver.ChromeOptions()
+Options.binary_location = os.environ['GOOGLE_CHROME_BIN']
+Options.add_argument('--headless')
+Options.add_argument('--disable-dev-sh-usage')
+Options.add_argument('--no-sandbox')
+
+driver = webdriver.Chrome(executable_path=os.environ['CHROMEDRIVER_PATH'], chrome_options=Options)
+
 TOKEN = os.environ['Token']
 
 
