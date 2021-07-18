@@ -39,7 +39,7 @@ async def on_message(message):
         msg5 = 'Runnning...'.format(message)
         await message.channel.send(msg5)
 
-        driver = webdriver.Firefox()
+        driver = webdriver.Chrome()
         for i in range(5):
                 driver.get(linku)
                 time.sleep(timer)
