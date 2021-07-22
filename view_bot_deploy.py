@@ -54,7 +54,13 @@ async def on_message(message):
         driver.close()
         msg4 = 'Successfully Completed'.format(message) #write
         await message.channel.send(msg4)
-
+        
+@client.event
+async def bump(ctx):
+    while True:
+        channel = client.get_channel(757888494126497812)
+        await channel.send('!d bump')
+        time.sleep(86400)
 
 @client.event
 async def on_ready():
