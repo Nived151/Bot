@@ -1,1 +1,1 @@
-worker: python view_bot_deploy.py
+worker: python doma_v1.py
