@@ -65,7 +65,7 @@ async def on_message(message):
         await message.channel.send(msg)
         x = await client.wait_for('message')
         district_name = x.content
-        with open("D:\Codes\JSON\district_id.json", "r") as f:
+        with open("district_id.json", "r") as f:
             districts_data = json.load(f)
         for districts in districts_data["districts"]:
             if district_name in districts["district_name"]:
